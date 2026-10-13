@@ -1,0 +1,19 @@
+version: 1
+
+indices:
+  default:
+    include:
+      - "/**"
+
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(content)
+
+      description:
+        select: head > meta[name="description"]
+        value: attribute(content)
+
+      image:
+        select: head > meta[property="og:image"]
+        value: attribute(content)
